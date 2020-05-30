@@ -11,7 +11,7 @@ import { currentUser } from "./redux/actions";
         // Fetch Current user on page reload
         currentUser();
       }
-    }, []);
+    });
     
     return (
       <>

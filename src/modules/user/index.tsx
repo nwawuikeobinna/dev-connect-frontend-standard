@@ -4,7 +4,7 @@ interface Props {
 
 }
 
-const DashboardPage = ({}: Props) => {
+const DashboardPage = () => {
     return (
       <h1>Dashboard Page</h1>
     );

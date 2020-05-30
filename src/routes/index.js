@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import {Switch, Route} from "react-router-dom";
+import {Switch} from "react-router-dom";
 import UserRoute from "./UserRoute";
 import GuestRoute from "./GuestRoute";
 import Loader from "../components/spinners/spinner-one";

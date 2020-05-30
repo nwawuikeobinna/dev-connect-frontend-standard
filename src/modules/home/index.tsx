@@ -5,7 +5,7 @@ interface Props {
 
 }
 
-const HomePage = ({}: Props) => {
+const HomePage = () => {
     return (
       <>
       <h1>Home Page</h1>
