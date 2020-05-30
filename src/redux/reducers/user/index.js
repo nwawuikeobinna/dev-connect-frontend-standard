@@ -1,17 +1,18 @@
 
-import { AUTH_USER, REFRESH_TOKEN } from "../types/authType";
+import { 
+  CURRENT_USER
+} from "../../types/userType";
 
 const INITIAL_STATE = {
-  isAuthenticated: "",
-  refreshToken: null
+  current: {}
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-  case AUTH_USER:
+  case CURRENT_USER:
     return {
       ...state,
-      isAuthenticated: action.payload.token
+      current: action.payload.user
     };
   default:
     return state;

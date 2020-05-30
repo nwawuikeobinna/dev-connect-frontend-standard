@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from "react";
+import {connect} from "react-redux";
+import setAuthorizationHeader from "./utils/setAuthorizationHeader";
+import { currentUser } from "./redux/actions";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const App = ({children, currentUser}:any) => {
+    useEffect(() => {
+      if (!!localStorage.getItem("token")) {
+        // Set Authorization Header Globally on page reload
+        setAuthorizationHeader(localStorage.getItem("token"));
+        // Fetch Current user on page reload
+        currentUser();
+      }
+    });
+    
+    return (
+      <>
+        {children}
+      </>
+    );
+  };
 
-export default App;
+
+  const mapDispatchToProps = {
+    currentUser
+  };
+  
+  export default connect(null, mapDispatchToProps)(App);
