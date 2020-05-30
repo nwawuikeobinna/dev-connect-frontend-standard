@@ -1,5 +1,5 @@
 
-import { AUTH_USER, REFRESH_TOKEN } from "../types/authType";
+import { AUTH_USER, REFRESH_TOKEN } from "../../types/authType";
 
 const INITIAL_STATE = {
   isAuthenticated: "",
